@@ -1,0 +1,61 @@
+/* General styling */
+body {
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  text-align: center;
+  margin: 40px;
+  background-color:beige;
+}
+
+/* Part 1: Button Hover Transition */
+.btn {
+  background: rgb(55, 134, 134);
+  color: white;
+  padding: 10px 20px;
+  border:navy;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.3s, transform 0.3s;
+}
+
+.btn:hover {
+  background: darkcyan;
+  transform: scale(1.1);
+}
+
+/* Part 1: Continuous Animation (keyframes) */
+.box {
+  width: 100px;
+  height: 90px;
+  margin: 20px auto;
+  background: rgb(58, 157, 170);
+  animation: pulse 3s infinite;
+  border-radius: 6px;
+}
+
+@keyframes pulse {
+  0% { transform: scale(1); opacity: 1; }
+  50% { transform: scale(1.2); opacity: 0.7; }
+  100% { transform: scale(1); opacity: 1; }
+}
+
+/* Part 3: Popup (hidden by default) */
+.popup {
+  display: none;
+  position: fixed;
+  top: 30%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: white;
+  border: 2px solid teal;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0px 8px 16px rgba(0,0,0,0.3);
+  opacity: 0;
+  transition: opacity 0.5s, transform 0.5s;
+}
+
+.popup.show {
+  display: block;
+  opacity: 1;
+  transform: translate(-50%, -50%) scale(1.05);
+}
